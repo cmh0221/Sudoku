@@ -1,16 +1,3 @@
-# array = [["5", "3", ".", ".", "7", ".", ".", ".", "."],
-#          ["6", ".", ".", "1", "9", "5", ".", ".", "."],
-#          [".", "9", "8", ".", ".", ".", ".", "6", "."],
-#          ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
-#          ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
-#          ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
-#          [".", "6", ".", ".", ".", ".", "2", "8", "."],
-#          [".", ".", ".", "4", "1", "9", ".", ".", "5"],
-#          [".", ".", ".", ".", "8", ".", ".", "7", "9"]]
-#
-import ui
-
-
 class Solve(object):
     def __init__(self, array):
         self.line = [[False] * 9 for i in range(9)]
@@ -19,7 +6,6 @@ class Solve(object):
         self.valid = False
         self.spaces = []
         self.array = array
-        print(array)
 
     def dfs(self, pos):
         if pos == len(self.spaces):
@@ -46,4 +32,4 @@ class Solve(object):
                     self.line[i][digit] = self.column[j][digit] = self.block[i // 3][j // 3][digit] = True
 
         self.dfs(0)
-        print(self.array)
+        return self.array
